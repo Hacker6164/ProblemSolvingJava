@@ -1,0 +1,24 @@
+class TwoSum {
+    public static int[] twoSum(int[] nums, int target) {
+        int sum = 0;
+        for (int i = 0; i <= nums.length-1; i++) {
+            int num1 = nums[i];
+            for (int j = i + 1; j < nums.length; j++) {
+                int num2 = nums[j];
+                sum = num1 + num2;
+                if (sum == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        throw  new IllegalArgumentException("Could not find a pair that could add up to TargetSum");
+    }
+    public static void main(String[] args){
+        int [] a={7,3,5,9,8};
+       int[]res= twoSum(a,1);
+        System.out.println("The elemets are found at: ");
+        for(int i:res){
+            System.out.print(i+" ");
+        }
+    }
+}
